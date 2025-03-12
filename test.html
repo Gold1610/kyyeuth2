@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Ảnh Khi Click</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Ảnh nhỏ */
+        .thumbnail {
+            width: 200px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        /* Khi hover vào ảnh nhỏ */
+        .thumbnail:hover {
+            transform: scale(1.1);
+        }
+
+        /* Lớp phủ nền đen khi zoom */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Ảnh lớn khi zoom */
+        .zoomed-img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px white;
+        }
+
+        /* Nút đóng */
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Click vào hình để phóng to</h2>
+
+    <!-- Ảnh nhỏ -->
+    <img src="random1.jpg" alt="Ảnh nhỏ" class="thumbnail" onclick="zoomImage(this)">
+
+    <!-- Khung zoom -->
+    <div id="overlay" class="overlay" onclick="closeZoom()">
+        <span class="close-btn">&times;</span>
+        <img id="zoomedImg" class="zoomed-img">
+    </div>
+
+    <script>
+        function zoomImage(imgElement) {
+            let overlay = document.getElementById("overlay");
+            let zoomedImg = document.getElementById("zoomedImg");
+            
+            zoomedImg.src = imgElement.src; // Lấy nguồn ảnh
+            overlay.style.display = "flex"; // Hiển thị overlay
+        }
+
+        function closeZoom() {
+            document.getElementById("overlay").style.display = "none"; // Ẩn overlay
+        }
+    </script>
+
+</body>
+</html>

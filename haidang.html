@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hải đăng</title>
+    <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fcefdf;
+        }
+
+        h2 {
+            background-color: #8b597b;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: "Yatra One", system-ui;
+            font-size: 64px;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+        .image-container {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            width: 500px;
+            font-size: 30px;
+            color: #493129;
+        }
+
+        .image-container img {
+            width: 400px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .zoomed {
+            transform: scale(1.5);
+            z-index: 10;
+            position: relative;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+        }
+        .description {
+            font-size: 18px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h2>Mô hình hải đăng</h2>
+    <div class="gallery">
+        <div class="image-container">
+            <img src="haidang.jpg" alt="Mô hình hoàn chỉnh">
+            <p><b>Mô hình hoàn chỉnh</b></p>
+        </div>
+
+        <div class="image-container">
+            <img src="haidang1.jpg" alt="Hình chụp tập thể" id="zoomable">
+            <p><b>Hình chụp tập thể</b></p>
+            <div class="description"><center>click để phóng to</center></div>
+        </div>
+
+        <div class="image-container">
+            <img src="haidang2.jpg" alt="Cái thuyền">
+            <p><b>Cái thuyền</b></p>
+            <div class="description"><center>ừ, nó là cái thuyền</center></div>
+        </div>
+    </div>
+
+    <script>
+        let zoomedImage = document.getElementById("zoomable");
+
+        zoomedImage.addEventListener("click", function () {
+            if (zoomedImage.classList.contains("zoomed")) {
+                zoomedImage.classList.remove("zoomed");
+            } else {
+                zoomedImage.classList.add("zoomed");
+            }
+        });
+    </script>
+
+</body>
+</html>

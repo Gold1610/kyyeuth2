@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>KỶ YẾU 12TH2</title>
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Be Vietnam Pro' rel='stylesheet'>
+    <style>
+
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .rainbow-text {
+            font-size: 75px;
+            font-weight: bold;
+            text-transform: uppercase;
+            background-image: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
+            background-size: 400% 400%;
+            animation: rainbow 3s infinite linear;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes sparkle {
+            0% { color: red; text-shadow: 0 0 5px red; }
+            50% { color: orange; text-shadow: 0 0 10px orange; }
+            100% { color: red; text-shadow: 0 0 5px red; }
+        }
+
+        .sparkle-text {
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            animation: sparkle 1s infinite alternate;
+        }
+
+        body {
+            background-color: #f9f6f2;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .content-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .nostalgia-text {
+            font-family: 'Dancing Script', sans-serif;
+            font-size: 55px;
+            font-weight: bold;
+            color: #d35400;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            flex: 1;
+            text-align: center;
+            max-width: 40%;
+        }
+      
+
+        .carousel-container {
+            width: 100%;
+            max-width: 1000px;
+            position: relative;
+            overflow: hidden;
+            margin: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        .extra-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .extra-content video {
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        .extra-content p {
+            font-size: 55px;
+            max-width: 50%;
+            font-weight: bold;
+            color: green;
+        }
+        .text {
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: #2E8B57; /* Xanh lá phấn bảng */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.extra-content1 p {
+            font-size: 26px;
+            max-width: 50%;
+            font-weight: bold;
+            color: darkblue;
+        }
+        @keyframes blink {
+            0% { background-color: red; color: white; }
+            50% { background-color: darkred; color: yellow; }
+            100% { background-color: red; color: white; }
+        }
+
+        @keyframes blink-blue {
+            0% { background-color: #007BFF; color: white; }
+            50% { background-color: #0056b3; color: yellow; }
+            100% { background-color: #007BFF; color: white; }
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh;
+            gap: 80px; /* Khoảng cách giữa 2 nhóm */
+        }
+
+        .group {
+            text-align: center;
+        }
+
+        .text {
+            font-size: 28px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            color: #FFA500;
+            text-shadow: 2px 2px 6px rgba(255, 165, 0, 0.6);
+            margin-bottom: 15px;
+        }
+
+        .text-blue {
+            color: #007BFF;
+            text-shadow: 2px 2px 6px rgba(0, 123, 255, 0.6);
+        }
+
+        .blink-button {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            animation: blink 1s infinite alternate;
+            text-decoration: none;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .blink-button-blue {
+            animation: blink-blue 1s infinite alternate;
+        }
+        .dropdown {
+            position: absolute;
+    top: ;
+    left: ;
+    transform: translate(-50%, -50%);
+          
+      }
+
+      /* Nút menu */
+      .dropbtn {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 16px;
+          font-size: 25px;
+          border: none;
+          cursor: pointer;
+          transition: background 0.3s;
+          border-radius: 12px; /* Bo góc 12px */
+      }
+
+      /* Đổi background khi di chuột vào nút Menu */
+      .dropbtn:hover {
+          background-color: #ff9800; /* Màu cam */
+      }
+
+      /* Nội dung menu (ban đầu ẩn đi) */
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: white;
+          min-width: 160px;
+          box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+          z-index: 1;
+          border-radius: 8px; /* Bo góc menu */
+          overflow: hidden; /* Giữ bo góc không bị tràn */
+      }
+
+      /* Định dạng các mục trong menu */
+      .dropdown-content a {
+          color: black;
+          padding: 10px 16px;
+          text-decoration: none;
+          display: block;
+          font-weight: bold;
+          transition: 0.3s;
+      }
+
+      /* Hiển thị menu khi rê chuột vào nút */
+      .dropdown:hover .dropdown-content {
+          display: block;
+      }
+
+      /* Tạo hiệu ứng chữ đổi màu cầu vồng khi hover */
+      .dropdown-content a:hover {
+          background-image: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
+          background-size: 200% 200%;
+          animation: rainbow 1s infinite alternate;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+      }
+
+     
+
+
+
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+            <a href="index.html">Trang chủ</a>
+            <a href="hoatdong.html">Hoạt Động</a>
+            <a href="DSTV.html">Thành Viên Lớp</a>
+            <a href="tkb.html" target="_blank">Thời Khóa Biểu</a>
+        </div>
+    </div>
+  
+  
+
+
+
+
+    <h1 class="rainbow-text">Chào mừng đến với KỶ YẾU LỚP 12TH2</h1>
+    <h2 class="sparkle-text">HỌC KHÔNG CHƠI ĐÁNH RƠI TUỔI TRẺ<br>CHƠI KHÔNG HỌC BÁN RẺ TƯƠNG LAI!!!</h2>
+<hr>
+
+    <div class="content-container">
+        <p class="nostalgia-text">
+            Sau quãng thời gian gần 3 năm vừa qua, lớp TH2 chúng mình đã đạt được rất nhiều thành tích đúng không nè? 
+            Vậy thì hãy cùng mình nhìn lại nhé!
+        </p>
+        <div class="carousel-container">
+            <div class="carousel-images">
+                <img src="tt1.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt2.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt3.jpg" alt="Tải lại trang để xem ảnh!">
+               
+                <img src="tt5.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt7.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt8.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt9.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt10.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt11.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt12.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt13.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt14.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt15.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt16.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt17.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt18.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt19.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt20.jpg" alt="Tải lại trang để xem ảnh!">
+                <img src="tt21.jpg" alt="Tải lại trang để xem ảnh!">
+               
+            </div>
+            <button class="prev" onclick="prevSlide()">❮</button>
+            <button class="next" onclick="nextSlide()">❯</button>
+        </div>
+    </div>
+    <script>
+        let index = 0;
+        const images = document.querySelectorAll(".carousel-images img");
+        const totalImages = images.length;
+        let autoSlideInterval;
+    
+        function showSlide(i) {
+            if (i >= totalImages) index = 0;
+            if (i < 0) index = totalImages - 1;
+            document.querySelector(".carousel-images").style.transform = `translateX(-${index * 100}%)`;
+        }
+    
+        function nextSlide() {
+            index++;
+            showSlide(index);
+            resetAutoSlide();
+        }
+    
+        function prevSlide() {
+            index--;
+            showSlide(index);
+            resetAutoSlide();
+        }
+    
+        function autoSlide() {
+            autoSlideInterval = setInterval(() => { 
+                nextSlide(); 
+            }, 3000);
+        }
+    
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlide();
+        }
+    
+        autoSlide();
+    </script>
+    
+    
+<hr>
+    <div class="extra-content">
+        <video src="vid1.mp4" controls alt="Trình duyệt của bạn không hỗ trợ video.">
+            
+    </video>
+        <p class="text">
+            Oh!!!Nhưng bên cạnh đó, tụi mình cũng đã trải qua những khoảnh khắc dở khóc, dở cười và khó đỡ cùng các thành viên TH2!!!=))))))
+        </p>
+    </div>
+<hr>
+    <div class="extra-content">
+        <p class="text">
+            TH2 có tinh thần siêu đoàn kết và luôn sẵn sàng giúp đỡ lẫn nhauuu nhaaaa!!!=))))
+        </p>
+        <video src="vid2.mp4" controls loop alt="Trình duyệt của bạn không hỗ trợ video.">
+            
+            
+    </video>
+    </div>
+    <hr>
+    <div class="extra-content">
+        <img src="tt1.jpg" controls alt="Trình duyệt của bạn không hỗ trợ video.">
+            
+    </video>
+        <p class="text">
+            Mỗi thành viên trong gia đình TH2 đều mang một màu sắc riêng biệt. Chúng mình gặp nhauu là duyên, xa nhau là chuyện hiển nhiên thường tình. Nhưng tớ chúc các cậu sẽ tỏa sáng trên con đường mai sau!
+        </p>
+    </div>
+    <hr>
+    <div class="container">
+        <!-- Cột 1 -->
+        <div class="group">
+            <p class="text">HOẠT ĐỘNG CỦA TH2 NÈEE:</p>
+            <a href="hoatdong.html" class="blink-button">Click here!</a>
+        </div>
+
+        <!-- Cột 2 (Bên phải) -->
+        <div class="group">
+            <p class="text text-blue">23 CON DÂN TH2 Ở ĐÂYYY:</p>
+            <a href="DSTV.html" target="_self" class="blink-button blink-button-blue">Click here!</a>
+        </div>
+    </div>
+
+   
+</body>
+</html>
